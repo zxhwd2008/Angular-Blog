@@ -1,0 +1,12 @@
+{
+  "name": "ElsevierTestLibs",
+  "version": "0.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.2.26",
+    "underscore": "~1.7.0",
+    "jquery": "1.9.1",
+    "angular-loading-bar": "^0.6.0",
+    "angular-ui-router": "~0.2.13"
+  }
+}
