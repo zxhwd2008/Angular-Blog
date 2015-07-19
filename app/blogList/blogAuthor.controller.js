@@ -15,7 +15,7 @@
         function goToHome() {
             blogFactory.blogData.blogCurrentUid = 0;
             blogFactory.getBlogListsByCategory(blogFactory.blogData.blogCurrentCid).then(function () {
-                $state.go("blog.list");
+                $state.go('blog.list');
             });
         }
     }

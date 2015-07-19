@@ -1,11 +1,11 @@
 (function () {
     'use strict';
 
-    angular.module('common').factory('_', _);
+    angular.module('common').factory('_', underscore);
 
-    _.$inject = ['$window'];
+    underscore.$inject = ['$window'];
 
-    function _($window) {
+    function underscore($window) {
         return $window._;
     }
 }());

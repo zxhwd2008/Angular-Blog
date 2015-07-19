@@ -7,7 +7,7 @@
 
     function blogFactory($http, $q) {
         var baseUrl = '/api/',
-            blogFactory = {
+            blogFactoryObj = {
                 blogData: {
                     blogCurrentCid: 0,
                     blogCurrentUid: 0,
@@ -21,16 +21,16 @@
                 getBlogCategories: getBlogCategories
             };
 
-        return blogFactory;
+        return blogFactoryObj;
 
         function getBlogLists() {
             var deffered = $q.defer(),
                 url = baseUrl + 'getBlogLists/' +
-                    blogFactory.blogData.blogCurrentCid + '/' +
-                    blogFactory.blogData.blogCurrentUid;
+                    blogFactoryObj.blogData.blogCurrentCid + '/' +
+                    blogFactoryObj.blogData.blogCurrentUid;
             $http.get(url)
                 .then(function(response) {
-                    angular.copy(response.data, blogFactory.blogData.blogLists);
+                    angular.copy(response.data, blogFactoryObj.blogData.blogLists);
                     deffered.resolve(response.data);
             });
 
@@ -38,12 +38,12 @@
         }
 
         function getBlogListsByUser(uid) {
-            blogFactory.blogData.blogCurrentUid = uid || 0;
+            blogFactoryObj.blogData.blogCurrentUid = uid || 0;
             return getBlogLists();
         }
 
         function getBlogListsByCategory(cid) {
-            blogFactory.blogData.blogCurrentCid = cid || 0;
+            blogFactoryObj.blogData.blogCurrentCid = cid || 0;
             return getBlogLists();
         }
 
@@ -51,7 +51,7 @@
         function getBlogCategories() {
             var deffered = $q.defer();
             $http.get(baseUrl + 'getBlogCategories').then(function(response) {
-                angular.copy(response.data, blogFactory.blogData.blogCategories);
+                angular.copy(response.data, blogFactoryObj.blogData.blogCategories);
                 deffered.resolve(response.data);
             });
 

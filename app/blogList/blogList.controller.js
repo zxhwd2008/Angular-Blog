@@ -30,7 +30,7 @@
 
         function goToAuthor(window, blog) {
             window.close();
-            $state.go("blog.list.author", {uid:blog.uid, username:blog.username});
+            $state.go('blog.list.author', {uid:blog.uid, username:blog.username});
         }
     }
 }());

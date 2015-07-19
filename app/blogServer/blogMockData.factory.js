@@ -1,7 +1,7 @@
 (function() {
-    'use strict';
+    "use strict";
 
-    angular.module('appDev').factory('blogMockDataFactory', blogMockDataFactory);
+    angular.module("appDev").factory("blogMockDataFactory", blogMockDataFactory);
 
     blogMockDataFactory.$inject = [];
 
