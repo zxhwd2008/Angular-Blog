@@ -1,12 +1,26 @@
 module.exports = {
-    common: {
+    app: {
         files: [
             {
                 expand: true,
                 src: [
                     '<%= globalConfig.src %>/**',
-                    '!<%= globalConfig.common %>/**/*.js',
-                    '!<%= globalConfig.common %>/*.js'
+                    '!<%= globalConfig.src %>/**/*.js',
+                    '!<%= globalConfig.src %>/*.js'
+                ],
+                dest: '<%= globalConfig.dest %>/',
+                filter: 'isFile'
+            }
+        ]
+    },
+    styles: {
+        files: [
+            {
+                expand: true,
+                src: [
+                    '<%= globalConfig.lib %>/**',
+                    '!<%= globalConfig.lib %>/**/*.js',
+                    '!<%= globalConfig.lib %>/*.js'
                 ],
                 dest: '<%= globalConfig.dest %>/',
                 filter: 'isFile'

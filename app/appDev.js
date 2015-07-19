@@ -14,7 +14,9 @@
 
     appDevConfig.$inject = ['$provide'];
     function appDevConfig($provide) {
-        $provide.decorator('$httpBackend', function($delegate) {
+        $provide.decorator('$httpBackend', delayBackend);
+        delayBackend.$inject = ['$delegate'];
+        function delayBackend($delegate) {
             var proxy = function(method, url, data, callback, headers) {
                 var interceptor = function() {
                     var _this = this,
@@ -31,6 +33,6 @@
                 }
             }
             return proxy;
-        });
+        }
     }
 })();
