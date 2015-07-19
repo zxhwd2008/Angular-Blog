@@ -40,10 +40,12 @@ body {
   width: 20px;
   line-height: 18px;
 }
-#sidebar-wrapper .sidebar-nav li a:hover,
-#sidebar-wrapper .sidebar-nav li.active {
-  color: #fff;
-  background-color: #428bca;
+#sidebar-wrapper .sidebar-nav li a:hover {
+  cursor: pointer;
+}
+#sidebar-wrapper .sidebar-nav li:not(.active) a:hover {
+  color: #2a6496;
+  background-color: #eee;
   text-decoration: none;
 }
 #sidebar-wrapper .sidebar-nav li a:active,
@@ -60,18 +62,19 @@ body {
  * Blog list styles including:
  * 1. Blog list card flip
  * 2. Blog card style
+ * 3. Blog content window style
  */
 #content {
   background: #fff;
   min-height: 500px;
   padding: 15px;
 }
+.blogLists {
+  margin: 15px 0;
+}
 .blogcard {
   margin: 5px 0;
   padding: 0;
-}
-.blogcard .cardContainer {
-  margin: 0 auto;
 }
 .blogcard .cardContainer .front {
   border: solid 1px #ccc;
@@ -101,9 +104,6 @@ body {
 .blogcard .cardContainer .back .blogcardimg {
   width: 140px;
   height: 140px;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
 }
 .blogcard:hover {
   cursor: pointer;

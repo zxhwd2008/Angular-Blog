@@ -1,6 +1,9 @@
 <ul class="sidebar-nav nav nav-pills nav-stacked">
-    <li data-ng-repeat="data in sidebar.blogCategories">
-        <a href="javascipt:void (0);">{{data.category}}</a>
+    <li data-ng-repeat="data in sidebar.blogCategories"
+            data-ng-class="{active: sidebar.category === data.cid}">
+        <a data-ng-click="sidebar.filterByCategory(data)"
+           data-ng-bind="data.category">
+        </a>
     </li>
 </ul>
 

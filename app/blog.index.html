@@ -5,8 +5,21 @@
             <h3>Categories</h3>
             <sidebar></sidebar>
         </div>
-        <div class="col-sm-10 col-xs-11" id="content">
-            <div data-ng-include="'app/blogList/blogList.html'" data-ng-controller="BlogList as list"></div>
+        <div class="col-sm-10 col-xs-11" id="content" data-ng-controller="BlogList as list">
+            <div class="filterButtons">
+                <ul class="nav nav-pills">
+                    <li role="presentation" class="active">
+                        <a href="#">All</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">Author</a>
+                    </li>
+                </ul>
+            </div>
+            <div data-ng-include="'app/blogList/blogList.html'"></div>
+            <div kendo-window="list.blogContentWindow"
+                 k-options="list.blogContentWindowOptions"></div>
+
         </div>
     </div>
 </div>

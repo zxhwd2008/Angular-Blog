@@ -7,6 +7,7 @@
 
     function blogFactory($http, $q) {
         var baseUrl = '/api/',
+            blogLists = [],
             blogFactory = {
                 blogData: {
                     blogLists: [],
@@ -23,6 +24,7 @@
         function getBlogLists() {
             var deffered = $q.defer();
             $http.get(baseUrl + 'getBlogLists').then(function(response) {
+                blogLists = response.data;
                 angular.copy(response.data, blogFactory.blogData.blogLists);
                 deffered.resolve(response.data);
             });
@@ -31,9 +33,17 @@
         }
 
         function getBlogsByUser(uid) {
+
         }
 
         function getBlogsByCategory(cid) {
+            var filteredBlogLists = [];
+            _.each(blogLists, function(blog) {
+                if (blog.cid === cid) {
+                    filteredBlogLists.push(blog);
+                }
+            });
+            angular.copy(cid ? filteredBlogLists : blogLists, blogFactory.blogData.blogLists);
         }
 
 

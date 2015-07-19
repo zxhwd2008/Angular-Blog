@@ -3,11 +3,12 @@
 
     angular.module('app', [
         // Angular modules
-        'ui.router',                    // routing
-        'angular-loading-bar',          // angular loading bar
+        'ui.router',              // routing
+        'angular-loading-bar',    // angular loading bar
+        'kendo.directives',       // kendo directives
 
         // Custom modules
-        'common'           // common functions, logger, spinner
+        'common'                  // common functions, logger, spinner
     ])
         .config(appConfig);
 

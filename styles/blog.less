@@ -39,10 +39,12 @@ body {
         }
       }
     }
-    li a:hover,
-    li.active {
-      color: #fff;
-      background-color: #428bca;
+    li a:hover {
+      cursor: pointer;
+    }
+    li:not(.active) a:hover{
+      color: #2a6496;
+      background-color: #eee;
       text-decoration: none;
     }
     li a:active,
@@ -64,6 +66,7 @@ body {
  * Blog list styles including:
  * 1. Blog list card flip
  * 2. Blog card style
+ * 3. Blog content window style
  */
 
 #content {
@@ -72,12 +75,14 @@ body {
   padding: 15px;
 }
 
+.blogLists {
+  margin: 15px 0;
+}
+
 .blogcard {
   margin: 5px 0;
   padding: 0;
   .cardContainer {
-    margin: 0 auto;
-
     .front {
       border: solid 1px #ccc;
       width: 140px;
@@ -107,9 +112,6 @@ body {
       .blogcardimg {
         width: 140px;
         height: 140px;
-        display: table-cell;
-        text-align: center;
-        vertical-align: middle;
       }
     }
   }
