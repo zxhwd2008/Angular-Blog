@@ -30,8 +30,15 @@ Unit tests are under the **test** folder, the **coverage** folder reveals the te
 
 **Build** folder contains all the packaging files conducted with Grunt.
 
-If you want to test the grunt build, here is the introduction how to do it:
-1. npm install
-2. grunt build
+If you want to test the grunt build, here is the introduction:
+
+```shell
+npm install
+```
+
+```shell
+grunt build
+```
+
 
 **grunt** folder contains all the tasks for packaging
