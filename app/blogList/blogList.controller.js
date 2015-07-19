@@ -8,12 +8,12 @@
     function BlogList(blogFactory, windowFactory) {
         var vm = this;
         vm.blog = null;
-        vm.category = null;
-        vm.filterMode = 'all';
-        vm.setFilterMode = setFilterMode;
         vm.blogLists = blogFactory.blogData.blogLists;
         vm.blogContentWindowOptions = generateWindowOptions();
+        vm.category = null;
+        vm.filterMode = 'all';
         vm.openBlog = openBlog;
+        vm.goToAuthor = goToAuthor;
 
         function generateWindowOptions() {
             return windowFactory.extendWindow({
@@ -30,8 +30,9 @@
             window.center().open();
         }
 
-        function setFilterMode(mode) {
-
+        function goToAuthor(window, blog) {
+            window.close();
+            
         }
     }
 }());

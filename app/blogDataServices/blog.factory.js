@@ -10,7 +10,9 @@
             blogFactory = {
                 blogData: {
                     blogCurrentCid: 0,
+                    blogCurrentUid: 0,
                     blogLists: [],
+                    blogUserLists: [],
                     blogCategories: []
                 },
                 getBlogLists: getBlogLists,
@@ -22,17 +24,22 @@
         return blogFactory;
 
         function getBlogLists() {
-            var deffered = $q.defer();
-            $http.get(baseUrl + 'getBlogLists/' + blogFactory.blogData.blogCurrentCid).then(function(response) {
-                angular.copy(response.data, blogFactory.blogData.blogLists);
-                deffered.resolve(response.data);
+            var deffered = $q.defer(),
+                url = baseUrl + 'getBlogLists/' +
+                    blogFactory.blogData.blogCurrentCid + '/' +
+                    blogFactory.blogData.blogCurrentUid;
+            $http.get(url)
+                .then(function(response) {
+                    angular.copy(response.data, blogFactory.blogData.blogLists);
+                    deffered.resolve(response.data);
             });
 
             return deffered.promise;
         }
 
-        function getBlogListsByUser() {
-
+        function getBlogListsByUser(uid) {
+            blogFactory.blogData.blogCurrentUid = uid ? uid : 0;
+            return getBlogLists();
         }
 
         function getBlogListsByCategory(cid) {

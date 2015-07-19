@@ -6,16 +6,14 @@
             <sidebar></sidebar>
         </div>
         <div class="col-sm-10 col-xs-11" id="content" data-ng-controller="BlogList as list">
-            <div class="filterButtons">
-                <ul class="nav nav-pills">
-                    <li role="presentation" class="active">
-                        <a data-ng-click="list.setFilterMode('all')">All</a>
-                    </li>
-                    <li role="presentation">
-                        <a data-ng-click="list.setFilterMode('author')">Author</a>
-                    </li>
-                </ul>
-            </div>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li class="active">
+                    Data
+                </li>
+            </ol>
             <div data-ng-include="'app/blogList/blogList.html'"></div>
             <div kendo-window="list.blogContentWindow"
                  k-options="list.blogContentWindowOptions"></div>
@@ -23,4 +21,4 @@
         </div>
     </div>
 </div>
-<footer></footer>
+<blog-footer></blog-footer>

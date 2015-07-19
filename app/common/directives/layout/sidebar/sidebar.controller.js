@@ -7,8 +7,8 @@
 
     function Sidebar(blogFactory) {
         var vm = this;
-        vm.category = null;
         vm.blogCategories = blogFactory.blogData.blogCategories;
+        vm.category = null;
         vm.filterByCategory = filterByCategory;
 
         function filterByCategory(category) {

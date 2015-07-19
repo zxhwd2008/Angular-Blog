@@ -105,9 +105,6 @@ body {
   width: 140px;
   height: 140px;
 }
-.blogcard:hover {
-  cursor: pointer;
-}
 /* entire container, keeps perspective */
 .flip-container {
   -webkit-perspective: 800;
@@ -117,6 +114,7 @@ body {
   /* flip speed goes here */
 }
 .flip-container .flipper {
+  cursor: pointer;
   width: 100%;
   height: 100%;
   -webkit-transform-style: preserve-3d;
@@ -176,4 +174,7 @@ body {
 .back {
   width: 140px;
   height: 140px;
+}
+.filterButtons ul li {
+  cursor: pointer;
 }

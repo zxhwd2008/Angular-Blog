@@ -1,6 +1,11 @@
 <div class="blogContent">
     <h3 class="text-center" data-ng-bind="list.blog.title"></h3>
-    <h6 class="text-center">Posted by {{list.blog.username}}</h6>
+    <h6 class="text-center">
+        Posted by
+        <a data-ng-click="list.goToAuthor(list.blogContentWindow, list.blog)">
+            {{list.blog.username}}
+        </a>
+    </h6>
     <h6 class="text-center">Category: {{list.blog.category}}</h6>
     <p class="lead" data-ng-bind="list.blog.text"></p>
 </div>
