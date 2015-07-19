@@ -12,12 +12,22 @@
         };
 
         function activate() {
-            $httpBackend.whenGET(/app\//).passThrough();
+            $httpBackend.whenGET(/app\/.*/).passThrough();
             getBlogLists();
             getBlogCategories();
 
             function getBlogLists() {
-                $httpBackend.whenGET('/api/getBlogLists').respond(blogMockData);
+                $httpBackend.whenGET(/\/api\/getBlogLists\/\w*/).respond(function (method, url) {
+                    var filteredBlogLists = [],
+                        re = /.*\/api\/getBlogLists\/(\w+)/,
+                        cid = parseInt(url.replace(re, '$1'), 10);
+                    _.each(blogMockData, function(blog) {
+                        if (blog.cid === cid) {
+                            filteredBlogLists.push(blog);
+                        }
+                    });
+                    return [200, cid !== 0 ? filteredBlogLists : blogMockData];
+                });
             }
 
             function getBlogCategories() {

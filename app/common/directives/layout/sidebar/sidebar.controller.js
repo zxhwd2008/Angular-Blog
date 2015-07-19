@@ -13,7 +13,7 @@
 
         function filterByCategory(category) {
             vm.category = vm.category === category.cid ? null : category.cid;
-            blogFactory.getBlogsByCategory(vm.category);
+            blogFactory.getBlogListsByCategory(vm.category);
         }
     }
 }());

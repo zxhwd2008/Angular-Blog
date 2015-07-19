@@ -4,11 +4,31 @@
     angular.module('appDev', [
         'app', 'ngMockE2E'
     ])
-        .run(appDevConfig);
+        .config(appDevConfig)
+        .run(appDevRun);
 
-    appDevConfig.$inject = ['blogMockBackendFactory'];
-
-    function appDevConfig(blogMockBackendFactory) {
+    appDevRun.$inject = ['blogMockBackendFactory'];
+    function appDevRun(blogMockBackendFactory) {
         blogMockBackendFactory.activate();
+    }
+
+    appDevConfig.$inject = ['$provide'];
+    function appDevConfig($provide) {
+        $provide.decorator('$httpBackend', function($delegate) {
+            var proxy = function(method, url, data, callback, headers) {
+                var interceptor = function() {
+                    var _this = this,
+                        _arguments = arguments;
+                    setTimeout(function() {
+                        callback.apply(_this, _arguments);
+                    }, 200);
+                };
+                return $delegate.call(this, method, url, data, interceptor, headers);
+            };
+            for(var key in $delegate) {
+                proxy[key] = $delegate[key];
+            }
+            return proxy;
+        });
     }
 })();
