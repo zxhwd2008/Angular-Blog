@@ -18,4 +18,20 @@
 
 ## Introduction
 
+### Set up project in local environment
 
+Download the project to your local environment and visit http://localhost/#/blog
+
+### Unit Testing
+
+Unit tests are under the **test** folder, the **coverage** folder reveals the test coverage of this project
+
+### Packaging
+
+**Build** folder contains all the packaging files conducted with Grunt.
+
+If you want to test the grunt build, here is the introduction how to do it:
+1. npm install
+2. grunt build
+
+**grunt** folder contains all the tasks for packaging
