@@ -38,13 +38,13 @@
         }
 
         function getBlogListsByUser(uid) {
-            blogFactory.blogData.blogCurrentUid = uid ? uid : 0;
+            blogFactory.blogData.blogCurrentUid = uid || 0;
             return getBlogLists();
         }
 
         function getBlogListsByCategory(cid) {
-            blogFactory.blogData.blogCurrentCid = cid ? cid : 0;
-            getBlogLists();
+            blogFactory.blogData.blogCurrentCid = cid || 0;
+            return getBlogLists();
         }
 
 

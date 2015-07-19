@@ -3,15 +3,13 @@
 
     angular.module('app').controller('BlogList', BlogList);
 
-    BlogList.$inject = ['blogFactory', 'windowFactory'];
+    BlogList.$inject = ['$state', 'blogFactory', 'windowFactory'];
 
-    function BlogList(blogFactory, windowFactory) {
+    function BlogList($state, blogFactory, windowFactory) {
         var vm = this;
         vm.blog = null;
         vm.blogLists = blogFactory.blogData.blogLists;
         vm.blogContentWindowOptions = generateWindowOptions();
-        vm.category = null;
-        vm.filterMode = 'all';
         vm.openBlog = openBlog;
         vm.goToAuthor = goToAuthor;
 
@@ -32,7 +30,7 @@
 
         function goToAuthor(window, blog) {
             window.close();
-            
+            $state.go("blog.list.author", {uid:blog.uid, username:blog.username});
         }
     }
 }());

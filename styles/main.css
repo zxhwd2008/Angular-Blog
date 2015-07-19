@@ -175,6 +175,9 @@ body {
   width: 140px;
   height: 140px;
 }
-.filterButtons ul li {
+.breadcrumb li a:not(.active) {
+  cursor: pointer;
+}
+.blogContent a {
   cursor: pointer;
 }

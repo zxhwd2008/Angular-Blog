@@ -26,7 +26,15 @@
             })
             .state('blog.list', {
                 url: '/blog',
+                controller: 'BlogList',
+                controllerAs: 'list',
                 templateUrl: 'app/blog.index.html'
+            })
+            .state('blog.list.author', {
+                url: '/:uid?username',
+                controller: 'BlogAuthor',
+                controllerAs: 'author',
+                templateUrl: 'app/blogList/blogAuthor.html'
             });
         $urlRouterProvider.otherwise('/blog');
 
