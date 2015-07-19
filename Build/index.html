@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html data-ng-app="appDev">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none!important;
+        }
+    </style>
+    <title data-ng-bind="title">Elsevier Blog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+    <link href="styles/main.css" rel="stylesheet" />
+
+</head>
+<body>
+<div ui-view></div>
+
+
+<script type="text/javascript" src="app/ElsevierTest-1437341257532.libs.min.js"></script>
+
+<script type="text/javascript" src="app/ElsevierTest-1437341257532.app.min.js"></script>
+
+</body>
+</html>

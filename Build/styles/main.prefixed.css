@@ -129,7 +129,8 @@ body {
   -ms-transition: 0.5s;
   -o-transform-style: preserve-3d;
   -o-transition: 0.5s;
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   transition: 0.5s;
   position: relative;
   /* hide back of pane during swap */
@@ -155,10 +156,12 @@ body {
 .flip-container .flipper .front {
   z-index: 2;
   /* for firefox 31 */
-  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
 }
 .flip-container .flipper .back {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 /* flip the pane when hovered */
 .flip-container:hover .flipper,

@@ -5,7 +5,6 @@ module.exports = {
     ],
     middleBuild: [
         '<%= globalConfig.dest %>/*.js',
-        '!<%= globalConfig.dest %>/*.min.js',
-        '<%= globalConfig.dest %>/styles'
+        '!<%= globalConfig.dest %>/*.min.js'
     ]
 };
