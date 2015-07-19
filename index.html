@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html data-ng-app="appDev">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none!important;
+        }
+    </style>
+    <title data-ng-bind="title">Elsevier Blog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+    <link href="lib/bower_components/kendo-ui-core/styles/kendo.common-bootstrap.min.css" rel="stylesheet" />
+    <link href="lib/bower_components/kendo-ui-core/styles/kendo.bootstrap.min.css" rel="stylesheet" />
+    <link href="lib/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="lib/bower_components/angular-loading-bar/build/loading-bar.css" rel="stylesheet" />
+    <link href="styles/main.css" rel="stylesheet" />
+
+</head>
+<body>
+<div ui-view></div>
+
+<!-- Vendor Scripts -->
+<script src="lib/bower_components/jquery/jquery.js"></script>
+<script src="lib/bower_components/angular/angular.js"></script>
+<script src="lib/bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="lib/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="lib/bower_components/angular-loading-bar/src/loading-bar.js"></script>
+<script src="lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="lib/bower_components/kendo-ui-core/js/kendo.ui.core.min.js"></script>
+<script src="lib/bower_components/underscore/underscore.js"></script>
+
+<!-- Bootstrapping -->
+<script src="app/app.js"></script>
+<script src="app/appDev.js"></script>
+
+<!-- common Directives -->
+<script src="app/common/directives/layout/topnav/topNav.directive.js"></script>
+<script src="app/common/directives/layout/sidebar/sidebar.directive.js"></script>
+<script src="app/common/directives/layout/sidebar/sidebar.controller.js"></script>
+
+<!-- common Modules -->
+<script src="app/common/underscore/underscore.factory.js"></script>
+
+
+<!-- common.bootstrap Modules -->
+
+<!-- app -->
+<script src="app/blogList/blogList.controller.js"></script>
+
+
+<!-- app Services -->
+<script src="app/blogDataServices/blogInit.factory.js"></script>
+<script src="app/blogDataServices/blog.factory.js"></script>
+<script src="app/blogServer/blogMockBackend.factory.js"></script>
+<script src="app/blogServer/blogMockData.factory.js"></script>
+
+</body>
+</html>

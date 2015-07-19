@@ -1,0 +1,186 @@
+body {
+  padding-top: 50px;
+  color: #777;
+  background: #f8f8f8;
+}
+/*
+ * Sidebar styles
+ */
+#wrapper {
+  transition: all 0.4s ease 0s;
+}
+
+#sidebar-wrapper {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+  h3 {
+    text-align: center;
+  }
+  .sidebar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      line-height: 20px;
+      a {
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        span:before {
+          position: absolute;
+          left: 0;
+          color: #41484c;
+          text-align: center;
+          width: 20px;
+          line-height: 18px;
+        }
+      }
+    }
+    li a:hover,
+    li.active {
+      color: #fff;
+      background-color: #428bca;
+      text-decoration: none;
+    }
+    li a:active,
+    li a:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+#wrapper.active {
+  padding-left: 0;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 0;
+}
+
+/*
+ * Blog list styles including:
+ * 1. Blog list card flip
+ * 2. Blog card style
+ */
+
+#content {
+  background: #fff;
+  min-height: 500px;
+  padding: 15px;
+}
+
+.blogcard {
+  margin: 5px 0;
+  padding: 0;
+  .cardContainer {
+    margin: 0 auto;
+
+    .front {
+      border: solid 1px #ccc;
+      width: 140px;
+      height: 140px;
+      background: #f8f8f8;
+      .titleOverlay {
+        display: table;
+        height: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+        width: 100%;
+
+        .title {
+          display: table-cell;
+          font-size: 14px;
+          padding: 4px;
+          text-align: center;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .back {
+      border: solid 1px #ccc;
+      background: #fff;
+      .blogcardimg {
+        width: 140px;
+        height: 140px;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.blogcard:hover {
+  cursor: pointer;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+  -webkit-perspective: 800;
+  -ms-perspective: 800;
+  -moz-perspective: 800;
+  -o-perspective: 800;
+
+  /* flip speed goes here */
+  .flipper {
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    -moz-transform-style: preserve-3d;
+    -moz-transition: 0.5s;
+    -ms-transform-style: preserve-3d;
+    -ms-transition: 0.5s;
+    -o-transform-style: preserve-3d;
+    -o-transition: 0.5s;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    position: relative;
+
+    /* hide back of pane during swap */
+    .front, .back {
+      backface-visibility: hidden;  /* W3C */
+      -webkit-backface-visibility: hidden; /* Safari & Chrome */
+      -moz-backface-visibility: hidden; /* Firefox */
+      -ms-backface-visibility: hidden; /* Internet Explorer */
+      -o-backface-visibility: hidden; /* Opera */
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* front pane, placed above back */
+    .front {
+      z-index: 2;
+      /* for firefox 31 */
+      transform: rotateY(0deg);
+    }
+
+    /* back, initially hidden pane */
+    .back {
+      transform: rotateY(180deg);
+    }
+  }
+
+
+}
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform:rotatey(-180deg);
+  -ms-transform:rotatey(-180deg); /* IE 9 */
+  -moz-transform:rotatey(-180deg); /* Firefox */
+  -webkit-transform:rotatey(-180deg); /* Safari and Chrome */
+  -o-transform:rotatey(-180deg); /* Opera */
+}
+
+.flip-container, .front, .back {
+  width: 140px;
+  height: 140px;
+}
+
+
