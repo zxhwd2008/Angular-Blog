@@ -40,5 +40,4 @@ npm install
 grunt build
 ```
 
-
 **grunt** folder contains all the tasks for packaging
