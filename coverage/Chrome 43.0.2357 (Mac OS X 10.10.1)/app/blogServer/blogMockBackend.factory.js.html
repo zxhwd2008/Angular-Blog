@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/blogServer/blogMockBackend.factory.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">app/blogServer/blogMockBackend.factory.js</span></h1>
+    <h2>
+        Statements: <span class="metric">57.58% <small>(19 / 33)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">14.29% <small>(2 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">75% <small>(6 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">57.58% <small>(19 / 33)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">app/blogServer/</a> &#187; blogMockBackend.factory.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">80</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+    'use strict';
+&nbsp;
+    angular.module('appDev').factory('blogMockBackendFactory', blogMockBackendFactory);
+&nbsp;
+    blogMockBackendFactory.$inject = ['$httpBackend', 'blogMockDataFactory', '_'];
+&nbsp;
+    function blogMockBackendFactory($httpBackend, blogMockDataFactory, _) {
+        var blogMockData = blogMockDataFactory();
+        return {
+            activate: activate
+        };
+&nbsp;
+        function activate() {
+            $httpBackend.whenGET(/app\/.*/).passThrough();
+            getBlogLists();
+            getBlogCategories();
+&nbsp;
+            function getBlogLists() {
+                $httpBackend.whenGET(/\/api\/getBlogLists\/\w+\/\w+/).respond(<span class="fstat-no" title="function not covered" >function (method, url) {</span>
+<span class="cstat-no" title="statement not covered" >                    var filteredBlogLists = [],</span>
+                        re = /.*\/api\/getBlogLists\/(\w+)\/(\w+)/,
+                        cid = parseInt(url.replace(re, '$1'), 10),
+                        uid = parseInt(url.replace(re, '$2'), 10);
+<span class="cstat-no" title="statement not covered" >                    _.each(blogMockData, <span class="fstat-no" title="function not covered" >function(blog) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        switch(cid) {</span>
+                            case 0:
+<span class="cstat-no" title="statement not covered" >                                if (!uid) {</span>
+                                    // cid &amp; uid = 0, push everything
+<span class="cstat-no" title="statement not covered" >                                    filteredBlogLists.push(blog);</span>
+                                }
+                                else <span class="cstat-no" title="statement not covered" >if (blog.uid === uid) {</span>
+                                    // cid = 0 AND uid != 0, push if uid equal with the parameter
+<span class="cstat-no" title="statement not covered" >                                    filteredBlogLists.push(blog);</span>
+                                }
+<span class="cstat-no" title="statement not covered" >                                break;</span>
+                            default:
+<span class="cstat-no" title="statement not covered" >                                if (blog.cid === cid) {</span>
+                                    // cid != 0, compare the cid with the parameter
+<span class="cstat-no" title="statement not covered" >                                    if (!uid) {</span>
+                                        // cid &amp; uid = 0, push everything
+<span class="cstat-no" title="statement not covered" >                                        filteredBlogLists.push(blog);</span>
+                                    }
+                                    else <span class="cstat-no" title="statement not covered" >if (blog.uid === uid) {</span>
+                                        // cid = 0 AND uid != 0, push if uid equal with the parameter
+<span class="cstat-no" title="statement not covered" >                                        filteredBlogLists.push(blog);</span>
+                                    }
+                                }
+                        }
+                    });
+<span class="cstat-no" title="statement not covered" >                    return [200, filteredBlogLists];</span>
+                });
+            }
+&nbsp;
+            function getBlogCategories() {
+                var categories = [], cids = [];
+                _.each(blogMockData, function(blog) {
+                    if (_.indexOf(cids, blog.cid) === -1) {
+                        cids.push(blog.cid);
+                        categories.push({
+                            cid: blog.cid,
+                            category: blog.category
+                        });
+                    }
+                });
+                $httpBackend.whenGET('/api/getBlogCategories').respond(categories);
+            }
+&nbsp;
+        }
+    }
+}());</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jul 19 2015 22:13:32 GMT+0300 (EEST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
